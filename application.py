@@ -8,15 +8,15 @@ from pydub import AudioSegment
 from os import path
 # import tensorflow.keras as keras
 
-app = Flask(__name__)
+application = Flask(__name__)
 model = tf.keras.models.load_model("./audio_classifier/ann.hdf5")
 
-@app.route("/", methods = ['GET','POST'])
-@app.route("/home", methods = ['GET','POST'])
+@application.route("/", methods = ['GET','POST'])
+@application.route("/home", methods = ['GET','POST'])
 def home() :
     return render_template('index.html')
 
-@app.route("/submit", methods = ['POST'])
+@application.route("/submit", methods = ['POST'])
 def submit():
     if 'myfile' not in request.files:
         return render_template('index.html',message='No file uploaded'),400
@@ -58,6 +58,6 @@ def submit():
     # return render_template('index.html',message='File is uploaded Successfully!', prediction_text="this is the prediction")
 
 if __name__ =="__main__":
-    app.run(debug=True)
+    application.run(debug=True)
 
 
