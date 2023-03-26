@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display:flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    /* background-image: linear-gradient(to bottom,#0bf,#066aff); */
+    background-color: #0d1117;
+    color: white;
+}
+form{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+#main-heading{
+    font-family: 'Anton', sans-serif;
+    font-size: 4vw;
+    margin-top: 15vh;
+    font-weight: 100;
+}
+#sec-heading{
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 100;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    margin-top: 20px;
+    font-size: 1.5vw;
+    color: white;
+    width: 50vw;
+    height: 20vh;
+    background-color: rgba(255, 255, 255, 0.082);
+    text-align: center;
+    border-radius: 8px;
+    padding-top: 9vh;
+    padding-bottom: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    font-style: italic;
+    text-shadow: 2px 2px #ffffff45;
+    box-shadow: 5px 5px #ffffff29;
+}
+
+label:hover{
+    background-color: rgba(255, 255, 255, 0.098);
+}
+
+button {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 65px 12px 66px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .33px;
+    color: rgb(0, 0, 0);
+    min-height: 50px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 5px 5px #ffffff3d;
+}
+
+#message-area{
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.082);
+    /* padding: 5px; */
+    border-radius: 5px;
+}
+#result-area{
+    /* font-style: italic; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3vw;
+    margin-top: 15px;
+    /* background-color: rgba(0, 0, 0, 0.162); */
+    /* padding: 5px; */
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px #00000021;
+    font-weight: 500;
+
+}

@@ -1,0 +1,13 @@
+flask
+pandas
+librosa
+matplotlib
+tensorflow
+numpy
+seaborn
+os
+json
+math
+sklearn
+scipy
+tqdm

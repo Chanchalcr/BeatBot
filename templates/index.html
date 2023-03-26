@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Genre Classifier</title>
+    <link rel="stylesheet" href="../static/style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 id="main-heading">Welcome to BeatBot</h1>
+    <h1 id="sec-heading">Discover your next favorite Beat🎧</h1>
+    <form id="audio-form"action="/submit" enctype="multipart/form-data" method="post">
+      <input type="file" accept="audio/*" id="myfile" name="myfile" />
+      <label for="myfile">Choose an audio file</label>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="message-area">
+        {{message}}
+    </div>
+    <div id="result-area">
+        {{prediction_text}}
+    </div>
+    <!-- <script>
+        document.getElementById('audio-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/submit', true);
+          xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+          xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+              var response = JSON.parse(this.responseText);
+              document.getElementById('result-area').textContent = response.result;
+            }
+          };
+          xhr.send(new FormData(event.target));
+        });
+      </script> -->
+  </body>
+</html>
