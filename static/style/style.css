@@ -35,6 +35,9 @@ form{
 input[type="file"] {
     display: none;
 }
+input[type="file"]:valid {
+    background-color: green;
+}
 
 label {
     margin-top: 20px;
@@ -52,6 +55,10 @@ label {
     font-style: italic;
     text-shadow: 2px 2px #ffffff45;
     box-shadow: 5px 5px #ffffff29;
+}
+label.uploaded{
+    content: "File is uploaded successfully!";
+    background-color: rgba(57, 226, 57, 0.249);
 }
 
 label:hover{

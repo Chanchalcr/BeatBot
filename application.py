@@ -35,25 +35,25 @@ def submit():
     predict=model.predict(prediction_features) 
     predict_class=np.argmax(predict,axis=1)
     if(predict_class == 0):
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is blues")
+        return render_template('index.html', prediction_text="Genre is blues")
     elif predict_class==1:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is classical")
+        return render_template('index.html', prediction_text="Genre is classical")
     elif predict_class==2:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is country")
+        return render_template('index.html', prediction_text="Genre is country")
     elif predict_class==3:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is disco")
+        return render_template('index.html', prediction_text="Genre is disco")
     elif predict_class==4:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is hiphop")
+        return render_template('index.html', prediction_text="Genre is hiphop")
     elif predict_class==5:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is jazz")
+        return render_template('index.html', prediction_text="Genre is jazz")
     elif predict_class==6:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is metal")
+        return render_template('index.html', prediction_text="Genre is metal")
     elif predict_class==7:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is pop")
+        return render_template('index.html', prediction_text="Genre is pop")
     elif predict_class==8:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is reggae")
+        return render_template('index.html', prediction_text="Genre is reggae")
     else:
-        return render_template('index.html',message='File is uploaded Successfully!', prediction_text="Genre is rock")
+        return render_template('index.html', prediction_text="Genre is rock")
     
     # return render_template('index.html',message='File is uploaded Successfully!', prediction_text="this is the prediction")
 

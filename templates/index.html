@@ -17,8 +17,8 @@
     <h1 id="main-heading">Welcome to BeatBot</h1>
     <h1 id="sec-heading">Discover your next favorite Beat🎧</h1>
     <form id="audio-form"action="/submit" enctype="multipart/form-data" method="post">
-      <input type="file" accept="audio/*" id="myfile" name="myfile" />
-      <label for="myfile">Choose an audio file</label>
+      <input type="file" accept="audio/*" id="myfile" name="myfile" onchange="handleFileUpload()"/>
+      <label for="myfile" id="mylabel">Choose an audio file</label>
       <button type="submit">Submit</button>
     </form>
     <div id="message-area">
@@ -27,6 +27,21 @@
     <div id="result-area">
         {{prediction_text}}
     </div>
+    <script>
+      function handleFileUpload() {
+        const fileInput = document.getElementById("myfile");
+        const fileLabel = document.getElementById("mylabel");
+
+        if (fileInput.files.length > 0) {
+    // File is uploaded, change label color
+        fileLabel.textContent = "File uploaded successfully!"
+        fileLabel.classList.add("uploaded");
+        } else {
+    // File is not uploaded, remove label color
+        fileLabel.classList.remove("uploaded");
+  }
+}
+    </script>
     <!-- <script>
         document.getElementById('audio-form').addEventListener('submit', function(event) {
           event.preventDefault();
