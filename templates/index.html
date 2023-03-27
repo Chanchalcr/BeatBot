@@ -20,7 +20,7 @@
     <form id="audio-form"action="/submit" enctype="multipart/form-data" method="post">
       <input type="file" accept="audio/*" id="myfile" name="myfile" onchange="handleFileUpload()"/>
       <label for="myfile" id="mylabel">Choose an audio file</label>
-      <button type="submit">Submit</button>
+      <button type="submit" onclick="playSound()">Submit</button>
     </form>
     <div id="message-area">
         {{message}}
@@ -40,8 +40,17 @@
         } else {
     // File is not uploaded, remove label color
         fileLabel.classList.remove("uploaded");
-  }
-}
+        }
+      }
+      function playSound() {
+        var sound_file = document.getElementById("myfile").files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(sound_file);
+        reader.onload = function() {
+        var audio = new Audio(reader.result);
+        audio.play();
+        };
+      }
     </script>
     <!-- <script>
         document.getElementById('audio-form').addEventListener('submit', function(event) {

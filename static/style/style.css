@@ -52,10 +52,11 @@ label {
     font-style: italic;
     text-shadow: 2px 2px #ffffff2e;
     box-shadow: 5px 5px #ffffff29;
+    transition: 1s ease-in-out;
 }
 label.uploaded{
     content: "File is uploaded successfully!";
-    background-color: #39bae231;
+    background-color: #39e23c31;
 }
 
 label:hover{
@@ -63,7 +64,7 @@ label:hover{
 }
 label.uploaded:hover{
     content: "File is uploaded successfully!";
-    background-color: #39bae240;
+    background-color: #39e24d40;
 }
 
 button {
