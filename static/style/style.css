@@ -35,9 +35,6 @@ form{
 input[type="file"] {
     display: none;
 }
-input[type="file"]:valid {
-    background-color: green;
-}
 
 label {
     margin-top: 20px;
@@ -53,16 +50,20 @@ label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
     font-style: italic;
-    text-shadow: 2px 2px #ffffff45;
+    text-shadow: 2px 2px #ffffff2e;
     box-shadow: 5px 5px #ffffff29;
 }
 label.uploaded{
     content: "File is uploaded successfully!";
-    background-color: rgba(57, 226, 57, 0.249);
+    background-color: #39bae231;
 }
 
 label:hover{
     background-color: rgba(255, 255, 255, 0.098);
+}
+label.uploaded:hover{
+    content: "File is uploaded successfully!";
+    background-color: #39bae240;
 }
 
 button {
