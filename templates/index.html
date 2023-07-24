@@ -4,29 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music Genre Classifier</title>
+    <title>Beat Bot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="../static/style/style.css" />
+    <link rel="icon" href="../static/musical-note.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="../static/musical-note.png" type="image/png">
+    <link rel="icon" href="../static/musical-note.png" type="image/png" />
   </head>
   <body>
-    <h1 id="main-heading">Welcome to BeatBot</h1>
-    <h1 id="sec-heading">Discover your next favorite Beat🎧</h1>
-    <form id="audio-form"action="/submit" enctype="multipart/form-data" method="post">
-      <input type="file" accept="audio/*" id="myfile" name="myfile" onchange="handleFileUpload()"/>
-      <label for="myfile" id="mylabel">Choose an audio file</label>
-      <button type="submit" onclick="playSound()">Submit</button>
-    </form>
-    <div id="message-area">
-        {{message}}
+    <div class="wrapper">
+      <div class="spinner">
+        <div class="r1"></div>
+        <div class="r2"></div>
+        <div class="r3"></div>
+        <div class="r4"></div>
+        <div class="r5"></div>
+      </div>
     </div>
-    <div id="result-area">
-        {{prediction_text}}
+    <div class="column">
+      <h1 id="main-heading" class="section title has-text-centered glow">BeatBot</h1>
+      <!-- <h1 id="sec-heading">Discover your next favorite Beat🎧</h1> -->
+      <form
+        id="audio-form"
+        action="/submit"
+        enctype="multipart/form-data"
+        method="post"
+      >
+        <input
+          type="file"
+          accept="audio/*"
+          id="myfile"
+          name="myfile"
+          onchange="handleFileUpload()"
+        />
+        <label for="myfile" id="mylabel">Choose an audio file</label>
+        <button type="submit">Predict</button>
+        <div id="message-area">{{message}}</div>
+      <div id="result-area">{{prediction_text}}</div>
+      </form>
+      
     </div>
     <script>
       function handleFileUpload() {
@@ -34,21 +58,21 @@
         const fileLabel = document.getElementById("mylabel");
 
         if (fileInput.files.length > 0) {
-    // File is uploaded, change label color
-        fileLabel.textContent = "File uploaded successfully!"
-        fileLabel.classList.add("uploaded");
+          // File is uploaded, change label color
+          fileLabel.textContent = "File uploaded successfully!";
+          fileLabel.classList.add("uploaded");
         } else {
-    // File is not uploaded, remove label color
-        fileLabel.classList.remove("uploaded");
+          // File is not uploaded, remove label color
+          fileLabel.classList.remove("uploaded");
         }
       }
       function playSound() {
         var sound_file = document.getElementById("myfile").files[0];
         var reader = new FileReader();
         reader.readAsDataURL(sound_file);
-        reader.onload = function() {
-        var audio = new Audio(reader.result);
-        audio.play();
+        reader.onload = function () {
+          var audio = new Audio(reader.result);
+          audio.play();
         };
       }
     </script>
